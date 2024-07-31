@@ -141,7 +141,7 @@ class CrosswordCreator():
         return False if one or more domains end up empty.
         """
         # change arcs to deque for efficient popleft
-        if not arcs:
+        if arcs is None:
             arcs = collections.deque((x, y) for x in self.domains for y in self.domains if x != y)
         else:
             arcs = collections.deque(arcs)
